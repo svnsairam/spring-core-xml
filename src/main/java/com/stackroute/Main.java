@@ -22,13 +22,10 @@ public class Main {
         BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
         beanDefinitionReader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
         Movie movie2 = ((DefaultListableBeanFactory) beanDefinitionRegistry).getBean(Movie.class);
-        System.out.println("Actor Name using BeanDefRegistry = "+movie2.getActor().getName());
+        System.out.println("Actor Name using BeanDefRegistry = " + movie2.getActor().getName());
 
-        ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie3=(Movie) context.getBean("movieRRR");
-        System.out.println("Actor Name using Application Context = "+movie3.getActor().getName());
-
-
-
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie3 = (Movie) context.getBean("movieRRR");
+        System.out.println("Actor Name using Application Context = " + movie3.getActor().getName());
     }
 }
