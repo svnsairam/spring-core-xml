@@ -14,21 +14,23 @@ import org.springframework.core.io.ClassPathResource;
 
 public class Main {
     public static void main(String[] args) {
-        BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
-        Movie movie1 = (Movie) beanFactory.getBean("movieRRR");
-        System.out.println("Actor Name using BeanFactory = " + movie1.getActor().getName());
+        ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        Movie movie1 = (Movie) context.getBean("movieBB2");
+        System.out.println("Actor Name using Application Context = " + movie1.getActor().getName());
+        System.out.println("Actor Gender using Application Context = " + movie1.getActor().getGender());
+        System.out.println("Actor Age using Application Context = " + movie1.getActor().getAge());
 
-        BeanDefinitionRegistry beanDefinitionRegistry = new DefaultListableBeanFactory();
-        BeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanDefinitionRegistry);
-        beanDefinitionReader.loadBeanDefinitions(new ClassPathResource("beans.xml"));
-        Movie movie2 = ((DefaultListableBeanFactory) beanDefinitionRegistry).getBean(Movie.class);
-        System.out.println("Actor Name using BeanDefRegistry = "+movie2.getActor().getName());
+        Movie movie2 = (Movie) context.getBean("movieBB2");
+        System.out.println(movie1 == movie2);
 
-        ApplicationContext context=new ClassPathXmlApplicationContext("beans.xml");
-        Movie movie3=(Movie) context.getBean("movieRRR");
-        System.out.println("Actor Name using Application Context = "+movie3.getActor().getName());
+        Movie movie3 = (Movie) context.getBean("movieKhaleja");
+        System.out.println("Actor Name using Application Context = " + movie3.getActor().getName());
+        System.out.println("Actor Gender using Application Context = " + movie3.getActor().getGender());
+        System.out.println("Actor Age using Application Context = " + movie3.getActor().getAge());
 
-
-
+        Movie movie4 = (Movie) context.getBean("movieSVSC");
+        System.out.println("Actor Name using Application Context = " + movie4.getActor().getName());
+        System.out.println("Actor Gender using Application Context = " + movie4.getActor().getGender());
+        System.out.println("Actor Age using Application Context = " + movie4.getActor().getAge());
     }
 }
