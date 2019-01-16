@@ -29,7 +29,7 @@ public class Triangle {
         return pointC;
     }
 
-    public String getMyPoints(){
-        return pointA.getX()+" "+pointA.getY()+" "+pointB.getX()+" "+pointB.getY()+" "+pointC.getX()+" "+pointC.getY();
+    public String getMyPoints() {
+        return pointA.getX() + " " + pointA.getY() + " " + pointB.getX() + " " + pointB.getY() + " " + pointC.getX() + " " + pointC.getY();
     }
 }

@@ -28,7 +28,7 @@ public class Main {
         BeanFactory factory = new XmlBeanFactory(res);
 
         Object o = factory.getBean("id1");
-        Categories wb = (Categories)o;
+        Categories wb = (Categories) o;
 
         wb.show();
 

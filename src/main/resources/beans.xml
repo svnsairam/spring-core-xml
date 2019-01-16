@@ -31,20 +31,20 @@
         <!--<constructor-arg index="0" ref="actorPrabhas"></constructor-arg>-->
     </bean>
     <!--<bean name="movieKhaleja, movieSVSC" class="com.stackroute.domain.Movie" scope="prototype">-->
-        <!--<constructor-arg index="0" ref="actorMahesh"></constructor-arg>-->
+    <!--<constructor-arg index="0" ref="actorMahesh"></constructor-arg>-->
     <!--</bean>-->
 
     <bean id="pointA" class="com.stackroute.domain.Point">
-        <property name="x" value="0" />
-        <property name="y" value="0" />
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
     </bean>
     <bean id="pointB" class="com.stackroute.domain.Point">
         <constructor-arg index="0" value="50"></constructor-arg>
         <constructor-arg index="1" value="50"></constructor-arg>
     </bean>
     <bean id="pointC" class="com.stackroute.domain.Point">
-        <property name="x" value="20" />
-        <property name="y" value="20" />
+        <property name="x" value="20"/>
+        <property name="y" value="20"/>
     </bean>
 
     <bean id="triangle" class="com.stackroute.domain.Triangle" autowire="byName">
@@ -52,11 +52,11 @@
     </bean>
 
     <bean id="id1" class="com.stackroute.domain.Categories" autowire="byName">
-        <property name="name" value="General Books" />
+        <property name="name" value="General Books"/>
     </bean>
     <bean id="bk" class="com.stackroute.domain.Book">
-        <property name="bookname" value="The Kids" />
-        <property name="bookprice" value="300" />
+        <property name="bookname" value="The Kids"/>
+        <property name="bookprice" value="300"/>
     </bean>
 
 </beans>

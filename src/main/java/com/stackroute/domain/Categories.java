@@ -21,10 +21,9 @@ public class Categories {
         this.bk = bk;
     }
 
-    public void show()
-    {
-        System.out.println("Categories name :"+name);
-        System.out.println("Book name :"+bk.getBookname()+" and Book Price :"+bk.getBookprice());
+    public void show() {
+        System.out.println("Categories name :" + name);
+        System.out.println("Book name :" + bk.getBookname() + " and Book Price :" + bk.getBookprice());
     }
 
 }
