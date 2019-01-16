@@ -3,7 +3,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="customInit" default-destroy-method="customDestroy">
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-init-method="customInit"
+       default-destroy-method="customDestroy">
     <bean id="actorNtr" class="com.stackroute.domain.Actor">
         <property name="name" value="JrNTR"></property>
         <property name="age" value="30"></property>
@@ -36,4 +37,8 @@
     <bean id="lifeCycleDemoBean" class="com.stackroute.demo.BeanLifecycleDemoBean" init-method="customInit"
           destroy-method="customDestroy2">
     </bean>
+    <bean id="beanPostProcessorDemo" class="com.stackroute.demo.BeanPostProcessorDemoBean">
+
+    </bean>
+
 </beans>
