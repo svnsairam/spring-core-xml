@@ -15,6 +15,7 @@ import org.springframework.core.io.ClassPathResource;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
+        // Since it's scope is singleton it is initialized by Application Context before we call getBean()
         Movie movie1 = (Movie) context.getBean("movieSVSC");
         // Even though the ref="actorMahesh" we get the Prabhas,male,38  because we have pre-setted the actor properties
         // (this.actor) before a movie bean is created
@@ -23,6 +24,7 @@ public class Main {
         System.out.println("Actor Gender using Application Context and AutoWiring = " + movie1.getActor().getGender());
         System.out.println("Actor Age using Application Context and AutoWiring = " + movie1.getActor().getAge());
 
+        // Since it's scope is prototype it is initialized by Application Context after we call getBean()
         Movie movie2 = (Movie) context.getBean("movieRRR");
         // Since the of the Movie bean wiht id="movieRRR" has scope = "prototype" it is not pre-setted its properties
         // But when we try to create bean it will again pre-set the properties (this.actor) using the
