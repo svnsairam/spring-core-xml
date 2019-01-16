@@ -4,6 +4,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
     <bean id="actorNtr" class="com.stackroute.domain.Actor">
         <property name="name" value="JrNTR"></property>
         <property name="age" value="30"></property>
@@ -24,13 +25,13 @@
         <constructor-arg index="1" value="male"></constructor-arg>
         <constructor-arg index="2" value="32"></constructor-arg>
     </bean>
-    <!--<bean id="movieRRR" class="com.stackroute.domain.Movie">-->
-    <!--<property name="Actor" ref="actorNtr"></property>-->
-    <!--</bean>-->
-    <bean id="movieBB2" class="com.stackroute.domain.Movie" scope="prototype" autowire="byName">
-        <!--<constructor-arg index="0" ref="actorPrabhas"></constructor-arg>-->
+    <bean id="movieRRR" class="com.stackroute.domain.Movie" scope="prototype">
+        <property name="Actor" ref="actorNtr"></property>
     </bean>
-    <!--<bean name="movieKhaleja, movieSVSC" class="com.stackroute.domain.Movie" scope="prototype">-->
-        <!--<constructor-arg index="0" ref="actorMahesh"></constructor-arg>-->
-    <!--</bean>-->
+    <bean id="movieBB2" class="com.stackroute.domain.Movie" >
+        <constructor-arg index="0" ref="actorPrabhas"></constructor-arg>
+    </bean>
+    <bean name="movieKhaleja, movieSVSC" class="com.stackroute.domain.Movie">
+        <constructor-arg index="0" ref="actorMahesh"></constructor-arg>
+    </bean>
 </beans>
