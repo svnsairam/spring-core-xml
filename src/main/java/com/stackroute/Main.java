@@ -1,6 +1,6 @@
 package com.stackroute;
 
-
+import com.stackroute.demo.BeanLifecycleDemoBean;
 import com.stackroute.domain.Movie;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
@@ -30,5 +30,8 @@ public class Main {
         System.out.println("Actor Name using Application Context and AutoWiring= " + movie2.getActor().getName());
         System.out.println("Actor Gender using Application Context and AutoWiring = " + movie2.getActor().getGender());
         System.out.println("Actor Age using Application Context and AutoWiring = " + movie2.getActor().getAge());
+
+        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
     }
+
 }

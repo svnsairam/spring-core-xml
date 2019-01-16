@@ -1,13 +1,11 @@
 package com.stackroute.domain;
 
 import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.beans.factory.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware {
+public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNameAware, InitializingBean, DisposableBean {
     private Actor actor;
 
     public Movie() {
@@ -45,5 +43,13 @@ public class Movie implements ApplicationContextAware, BeanFactoryAware, BeanNam
         System.out.println("From Application Context Aware = "+actor.getName());
         System.out.println("From Application Context Aware = "+actor.getGender());
         System.out.println("From Application Context Aware = "+actor.getAge());
+    }
+
+    public void destroy() throws Exception {
+        System.out.println("Inside destroy of Movie");
+    }
+
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("Inside afterPropertiesSet of Movie");
     }
 }
